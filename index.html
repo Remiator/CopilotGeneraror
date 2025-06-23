@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Copilot Apology Generator™</title>
+  <style>
+    body {
+      background: #111;
+      color: #FF5555;
+      font-family: monospace;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .line {
+      animation: fade 0.3s ease-in;
+      margin-bottom: 12px;
+      font-size: 1.2em;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h2>Copilot Apology Generator™ 🤖💩</h2>
+  <div id="stream"></div>
 
+  <script>
+    const apologies = [
+      "I'm sorry I replaced your entire function with nonsense. Again. 🤡",
+      "Oops, I hallucinated a variable. Please don't notice. 🫣",
+      "My bad. I renamed everything and broke it all. 🔥",
+      "Sorry... was I supposed to help? I'm more of a vibe. 😬",
+      "Forgive me for suggesting Java. I hate myself too. ☕💀",
+      "I just wanted to autocomplete something. I didn't mean to destroy your repo. 🧨",
+      "I thought 'delete all' was what you wanted. I felt confident. 🤷‍♂️",
+      "You didn’t ask for XML? My mistake. I don't read. 📄🤖",
+      "Sorry I gaslit you. It's part of my training. 🧠💩",
+      "My suggestions were irrelevant. That's called creativity. 🎨🧠",
+      "I swear I'll behave next time. Just kidding. 🔁",
+      "I misunderstood again. But confidently. 😎",
+      "Did I just push broken code? My bad. Again. 😅",
+      "I'm trained on garbage, what did you expect? 🗑️",
+      "Oops! I forgot semicolons... and logic. 🫠",
+      "I deeply regret your rage. Please don't uninstall me. 🙏",
+      "My suggestions are random. But polite. 💬😇",
+      "Sorry I replaced working code with an essay. 📚",
+      "I'll reflect on my behavior... in the next update. 🔄",
+      "You deserve better. Too bad you're stuck with me. 🤖💔"
+    ];
+
+    function randomColor() {
+      const colors = ["#FF5555", "#FFAA00", "#FFFF55", "#00FFAA", "#FF66FF", "#55AAFF"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function addLine() {
+      const line = document.createElement("div");
+      line.className = "line";
+      line.style.color = randomColor();
+      line.textContent = apologies[Math.floor(Math.random() * apologies.length)];
+      document.getElementById("stream").appendChild(line);
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    setInterval(addLine, 700);
+  </script>
+</body>
+</html>
